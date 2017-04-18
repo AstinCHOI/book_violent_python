@@ -3,7 +3,7 @@ import crypt
 
 def testPass(cryptPass):
     salt = cryptPass[0:2] # HX
-    dictFile = open('dictionary.txt', 'r')
+    dictFile = open('1_dictionary.txt', 'r')
     for word in dictFile.readlines():
         word = word.strip('\n')
         cryptWord = crypt.crypt(word, salt)
@@ -14,7 +14,7 @@ def testPass(cryptPass):
         return
 
 def main():
-    passFile = open('passwords.txt')
+    passFile = open('1_passwords.txt')
     for line in passFile.readlines():
         if ":" in line:
             user = line.split(":")[0]
